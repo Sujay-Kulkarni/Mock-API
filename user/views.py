@@ -22,12 +22,16 @@ class ValidateAccessCode(APIView):
             payload = serializer.validated_data
             
             code = payload.pop('signup_code')
-            if code=="ABCDEFG":
-                return Response({"status": status.HTTP_200_OK,"message":"Success", "data":{"user_details": {"firstname": "Divya","lastname": "Mansinghani", "gender": {"key": "F", "value": "Female"},"dob": "10-15-1997"}}}, status=status.HTTP_200_OK)
-            else:
-                return Response({"status": "failed","message":"Invalid Signup Code"}, status=status.HTTP_404_NOT_FOUND)
+            if code is not None:
+                try:
+                    if code=="ABCDEFG":
+                        return Response({"status": status.HTTP_200_OK,"message":"Success", "data":{"user_details": {"firstname": "Divya","lastname": "Mansinghani", "gender": {"key": "F", "value": "Female"},"dob": "10-15-1997"}}}, status=status.HTTP_200_OK)
+                    else:
+                        return Response({"status": "failed","message":"Invalid Signup Code"}, status=status.HTTP_404_NOT_FOUND)
+                except:
+                    return Response('Not found')
         except:
-            return Response('ok')
+            return Response('The Field cannot be empty',status=status.HTTP_400_BAD_REQUEST)
 
 class Signup(APIView):
     permission_classes = ()
