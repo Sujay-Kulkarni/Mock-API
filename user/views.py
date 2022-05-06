@@ -41,7 +41,7 @@ class Signup(APIView):
         password=payload.pop('password')
         try:
             if email=='Snehal.Limburkar@newscapeconsulting.com' and password=='Sneha@1997':
-                return Response({"access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI0ODQ0MTQ5LCJqdGkiOiJjYzAzMWM0MTYyMzU0OGZiYWVkYmVjNzMzMmFmOTlkZCIsInVzZXJfaWQiOjksInBlcm1pc3Npb25zIjoibGltaXRlZCJ9.KxC9By5SwYlXBO-ysjBNuzTRuDxZmeTB-kE3SfSlDB4",
+                return Response({"status":status.HTTP_201_CREATED,"access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI0ODQ0MTQ5LCJqdGkiOiJjYzAzMWM0MTYyMzU0OGZiYWVkYmVjNzMzMmFmOTlkZCIsInVzZXJfaWQiOjksInBlcm1pc3Npb25zIjoibGltaXRlZCJ9.KxC9By5SwYlXBO-ysjBNuzTRuDxZmeTB-kE3SfSlDB4",
                                    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYyNzQzMjU0OSwianRpIjoiMmFhODFkYjUzMzQ1NDc2OGFhMjljZTQ1YTcwMjgwMDMiLCJ1c2VyX2lkIjo5LCJwZXJtaXNzaW9ucyI6ImxpbWl0ZWQifQ.RBwJKoB2o3M7wZfL3_z0srJTGOeeinaPD_NW91tx8B8"},status=status.HTTP_201_CREATED)
             else:
                 return Response('Invalid Credentials')
