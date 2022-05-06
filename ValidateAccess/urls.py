@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+
 from user import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('validate/', views.ValidateAccessCode.as_view(), name='validate'),
+    path('api/v1/users/validate/', views.ValidateAccessCode.as_view(), name='validate'),
+    path('api/v1/users/signup/', views.Signup.as_view(), name='signup'),
+
 ]

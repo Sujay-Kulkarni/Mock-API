@@ -10,3 +10,6 @@ class User(models.Model):
         ('F', 'Female'),
     )
     gender = models.CharField(max_length=2, null=False, choices=gender_choices)
+
+class Signup(models.Model):
+    access_code=models.CharField(max_length=255)
