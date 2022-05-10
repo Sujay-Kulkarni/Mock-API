@@ -25,7 +25,7 @@ class ValidateAccessCode(APIView):
             if code is not None:
                 try:
                     if code=="ABCDEFG":
-                        return Response({"status": status.HTTP_200_OK,"message":"Success", "data":{"user_details": {"firstname": "Divya","lastname": "Mansinghani", "gender": {"key": "F", "value": "Female"},"dob": "10-15-1997"}}}, status=status.HTTP_200_OK)
+                        return Response({"status": status.HTTP_200_OK,"message":"Success", "data":{"user_details": {"firstname": "Divya","lastname": "Mansinghani","email":"Divya.Mansinghani@newscapeconsulting.com", "gender": {"key": "F", "value": "Female"},"dob": "10-15-1997"}}}, status=status.HTTP_200_OK)
                     else:
                         return Response({"status": "failed","message":"Invalid Signup Code"}, status=status.HTTP_404_NOT_FOUND)
                 except:
